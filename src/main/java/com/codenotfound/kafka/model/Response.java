@@ -27,7 +27,17 @@ public class Response {
 
     public String result;
     public String processedBy;
+
+    public String getRequestNumber() {
+        return requestNumber;
+    }
+
+    public void setRequestNumber(String requestNumber) {
+        this.requestNumber = requestNumber;
+    }
+
     public String sendingTo;
+    public String requestNumber;
 
     public Response(){
         super();

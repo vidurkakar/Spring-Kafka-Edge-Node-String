@@ -12,8 +12,8 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class RequestController {
     private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
-
+    private final AtomicLong service1Counter = new AtomicLong();
+    private final AtomicLong service3Counter = new AtomicLong();
     @Autowired
     SendRequest sender;
 //    @RequestMapping("/greeting")
@@ -38,6 +38,7 @@ public class RequestController {
             request.setRequestSentBy(payload[1]);
             request.setRequestValue(payload[2]);
             request.setResponseGivenBackTo(payload[3]);
+            request.setRequestNumber(String.valueOf(service1Counter.getAndIncrement()));
         }
         sender.send(request);
         return ("Device Node Makes a request to edge node. The request is " + requestQuery);
@@ -56,6 +57,7 @@ public class RequestController {
             request.setRequestSentBy(payload[1]);
             request.setRequestValue(payload[2]);
             request.setResponseGivenBackTo(payload[3]);
+            request.setRequestNumber(String.valueOf(service3Counter.getAndIncrement()));
         }
         sender.send(request);
         return ("Device Node Makes a request to edge node. The request is " + requestQuery);

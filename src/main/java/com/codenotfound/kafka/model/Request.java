@@ -38,6 +38,16 @@ public class Request {
     public String requestValue;
     public String requestSentTo;
 
+    public String getRequestNumber() {
+        return requestNumber;
+    }
+
+    public void setRequestNumber(String requestNumber) {
+        this.requestNumber = requestNumber;
+    }
+
+    public String requestNumber;
+
     public Request(){
         super();
     }
