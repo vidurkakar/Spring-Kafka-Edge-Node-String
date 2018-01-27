@@ -67,4 +67,23 @@ public class RequestController {
         //ResponseToBeGivenTo
     }
 
+    @RequestMapping("/service4")
+    public String service4(@RequestParam(value = "request", defaultValue = "deviceNodeReq2#EdgeNode1#HelloFromEdgeNode#edgeNodeResp1") String requestQuery){
+        Request request =new Request();
+        String payload[] = requestQuery.split("#");
+        if(payload.length ==4) {
+            request.setrequestSentTo(payload[0]);
+            request.setRequestSentBy(payload[1]);
+            request.setRequestValue(payload[2]);
+            request.setResponseGivenBackTo(payload[3]);
+            request.setRequestNumber(String.valueOf(service3Counter.getAndIncrement()));
+        }
+        sender.send(request);
+        return ("Device Node Makes a request to edge node. The request is " + requestQuery);
+        //Sending To
+        //Sent By
+        //Value
+        //ResponseToBeGivenTo
+    }
+
 }

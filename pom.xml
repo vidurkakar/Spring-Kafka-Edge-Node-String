@@ -55,15 +55,25 @@
           <!--<artifactId>freetts2</artifactId>-->
           <!--<version>1.0</version>-->
       <!--</dependency>-->
+    <dependency>
+      <groupId>com.zenjava</groupId>
+      <artifactId>javafx-maven-plugin</artifactId>
+      <version>8.6.0</version>
+    </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <!-- spring-boot-maven-plugin -->
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
+
+        <!-- spring-boot-maven-plugin -->
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+
+
     </plugins>
+
   </build>
 </project>
