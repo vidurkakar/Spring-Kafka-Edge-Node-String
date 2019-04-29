@@ -49,6 +49,7 @@ public class ReceiveRequestReceiveResponse {
     @KafkaListener(topics = "edgeNodeResp1")
     public void receive3(String responseResult){
     //    TextToSpeechConvertor textToSpeechConvertor = new TextToSpeechConvertor();
+        System.out.println("The Raw Response is: " + responseResult);
         String responsePayload[] = responseResult.split("#");
     //    textToSpeechConvertor.speak("Response Got Back" + payload[1] + "Processed By" + payload[2]);
         //    LOGGER.info("received payload = '{}'", responseResult);
